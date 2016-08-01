@@ -89,6 +89,18 @@ public class SearchActivity extends AppCompatActivity {
             openLinkInBrowser(allArticles.get(position).getWebUrl());
         });
 
+        ItemClickSupport.addTo(recyclerView).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
+            @Override
+            public void onItemClicked(RecyclerView recyclerView, int position, View v) {
+                openLinkInBrowser(allArticles.get(position).getWebUrl());
+            }
+        });
+
+        ItemClickSupport.addTo(recyclerView).setOnItemLongClickListener((RecyclerView recyclerView, int position, View v) -> {
+            //todo: share content
+            return true;
+        });
+
         // Lookup the swipe container view
         swipeContainer = (SwipeRefreshLayout) findViewById(R.id.swipeContainer);
         // Setup refresh listener which triggers new data loading
@@ -101,7 +113,6 @@ public class SearchActivity extends AppCompatActivity {
                 android.R.color.holo_green_light,
                 android.R.color.holo_orange_light,
                 android.R.color.holo_red_light);
-
 
         recyclerView.addOnScrollListener(new EndlessRecyclerViewScrollListener(gridLayoutManager) {
             @Override
@@ -176,7 +187,6 @@ public class SearchActivity extends AppCompatActivity {
 
         if (!Helper.isOnline()) {
             swipeContainer.setRefreshing(false);
-
             return;
         }
 
