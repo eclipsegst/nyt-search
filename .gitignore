@@ -1,0 +1,11 @@
+.idea
+*.iml
+
+# Gradle
+.gradle
+gradlew.bat
+build
+local.properties
+
+# Apple
+.DS_Store

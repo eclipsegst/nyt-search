@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">NYTimes Search</string>
+
+    <string name="no_results">No results</string>
+
+    <string name="open_in_web_page">"Open this link in web page?"</string>
+
+    <string name="begin_date">Begin Date</string>
+    <string name="sort_order">Sort Order</string>
+    <string name="sort_order_newest">Newest</string>
+    <string name="sort_order_oldest">Oldest</string>
+    <string name="sort_order_asc">Ascending</string>
+    <string name="sort_order_desc">Descending</string>
+    <string name="news_desk_values">News Desk Values</string>
+    <string name="news_desk_values_arts">Arts</string>
+    <string name="news_desk_values_fashion">Fashion &amp; Style</string>
+    <string name="news_desk_values_sports">Sports</string>
+    <string name="save">Save</string>
+
+    <string name="begin_date_format">MMMM d, yyyy</string>
+    <string name="begin_date_format_nyt">yyyyMMdd</string>
+</resources>

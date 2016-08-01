@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sort_order_array">
+        <item>@string/sort_order_newest</item>
+        <item>@string/sort_order_oldest</item>
+        <item>@string/sort_order_asc</item>
+        <item>@string/sort_order_desc</item>
+    </string-array>
+</resources>
