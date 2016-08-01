@@ -1,6 +1,6 @@
 package com.zhaolongzhong.nytimessearch.service;
 
-public enum  SortOrder {
+public enum SortOrder {
     NEWEST(0, "Newest", "newest"),
     OLDEST(1, "Oldest", "oldest"),
     ASC(2, "Ascending", "asc"),

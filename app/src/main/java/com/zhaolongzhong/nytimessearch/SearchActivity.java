@@ -86,18 +86,12 @@ public class SearchActivity extends AppCompatActivity {
         // a better way of handling item on click
         // https://gist.github.com/nesquena/231e356f372f214c4fe6
         ItemClickSupport.addTo(recyclerView).setOnItemClickListener((RecyclerView recyclerView, int position, View v) -> {
-            openLinkInBrowser(allArticles.get(position).getWebUrl());
-        });
-
-        ItemClickSupport.addTo(recyclerView).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
-            @Override
-            public void onItemClicked(RecyclerView recyclerView, int position, View v) {
-                openLinkInBrowser(allArticles.get(position).getWebUrl());
-            }
+            ArticleDetailActivity.newInstance(this, allArticles.get(position));
+            overridePendingTransition(R.anim.right_in, R.anim.stay);
         });
 
         ItemClickSupport.addTo(recyclerView).setOnItemLongClickListener((RecyclerView recyclerView, int position, View v) -> {
-            //todo: share content
+            //todo: share content in detail activity
             return true;
         });
 
@@ -205,6 +199,7 @@ public class SearchActivity extends AppCompatActivity {
                     allArticles.addAll(newArticles);
                     articleAdapter.notifyItemChanged(curSize, allArticles.size() - 1);
                     noResultsTextView.setVisibility(allArticles.size() == 0 ? View.VISIBLE : View.GONE);
+                    //todo: get article from local database
                 } catch (JSONException e) {
                     Log.d(TAG, "Error int getting response or docs.", e);
                 }
@@ -270,6 +265,7 @@ public class SearchActivity extends AppCompatActivity {
         });
     }
 
+    // Open link in browser
     private void openLinkInBrowser(final String urlString) {
         new AlertDialog.Builder(this)
                 .setMessage(getString(R.string.open_in_web_page))

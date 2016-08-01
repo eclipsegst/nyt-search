@@ -20,6 +20,8 @@
 
     <style name="AppAlertTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
         <item name="android:windowTitleStyle">@style/DialogWindowTitle</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
     </style>
 
     <style name="DialogWindowTitle" parent="Base.DialogWindowTitle.AppCompat">
@@ -30,19 +32,6 @@
 
     <style name="DialogWindowTitleText" parent="@android:style/TextAppearance.DialogWindowTitle">
         <item name="android:textSize">24sp</item>
-    </style>
-
-    <!-- Full screen dialog -->
-    <style name="DialogTheme" parent="android:Theme.Dialog">
-
-        <item name="android:layout_width">fill_parent</item>
-        <item name="android:layout_height">fill_parent</item>
-
-
-        <!-- No backgrounds, titles or window float -->
-        <item name="android:windowBackground">@null</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowIsFloating">false</item>
     </style>
 
 </resources>

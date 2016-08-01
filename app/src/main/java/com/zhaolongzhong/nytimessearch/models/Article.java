@@ -5,6 +5,7 @@ import android.util.Log;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.parceler.Parcel;
 
 import java.util.List;
 
@@ -55,7 +56,7 @@ import io.realm.annotations.RealmClass;
 }
 
  */
-
+@Parcel
 @RealmClass
 public class Article implements RealmModel {
     private static final String TAG = Article.class.getSimpleName();
